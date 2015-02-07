@@ -7,11 +7,7 @@ var Steelers= Ti.UI.createLabel({
 	font:{fontSize: 30},
 	top: 150,
 });
- // var PittHead=Ti.UI.createView({
- 	// backgroundColor:"Red",
- 	// height: 80,
- 	// top:30,
- // });
+ 
 
 
 
@@ -25,18 +21,18 @@ var nextButton = Ti.UI.createLabel({
 	bottom: 10,
 	right: 10,
 
-});
-nextButton.addEventListener("click", function(){
-	if (count==4){
-		count=0;
-	}else{
-		count++;
-	}
-	Steelers.text=Steelers1[count];
-});
+ });
+ nextButton.addEventListener("click", function(){
+	 if (count==4){
+		 count=0;
+	 }else{
+		 count++;
+	 }
+	 Steelers.text=Steelers1[count];
+ });
 
 
-//Steelers1.text=Steelers[count];
+Steelers1.text=Steelers[count];
 
 
 var backButton = Ti.UI.createLabel({
@@ -57,14 +53,11 @@ Steelers.text=Steelers1[count];
 });
 
 
-
-
-// var backLabel=Ti.UI.createLabel({
-	// text:"Back",
-// });
-// backButton.add("backLabel");
-// 
+var backLabel=Ti.UI.createLabel({
+	text:"Back",
+});
+ backButton.add("backLabel");
 win.add(nextButton,backButton);
-//PittHead.add(Steelers);
 win.add(Steelers1);
+win.add(Steelers);
 
