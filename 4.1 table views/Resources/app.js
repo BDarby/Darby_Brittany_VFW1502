@@ -6,48 +6,74 @@ var win=Ti.UI.createWindow({
 	title:"Grocery App",
 });
 
-
-
-
-
 //data array
 
-//var breakfastItems=["bacon","eggs","Frosted flakes","Milk","Oj"];
-var breakfastItems=[{title:"Bacon"}, {title:"eggs"},{title:"Frosted flakes"}, {title:"Milk"},{title:"Oj"}]; //dictionary
+var breakfastItems=[
+{title:"Bacon"}, 
+{title:"eggs"},
+{title:"Frosted flakes"},
+ {title:"Milk"},
+ {title:"Oj"}]; //dictionary
 
-var lunchItems=[{title:"bread"}, {title:"cheese"},{title:"Bologna"}, {title:"chips"},{title:"soda"}]; 
+var lunchItems=[
+{title:"bread"},
+ {title:"cheese"},
+ {title:"Bologna"},
+  {title:"chips"},
+  {title:"soda"},
+  ]; 
+
+
+var breakfastHeader=Ti.UI.createView({
+	backgroundColor:"#8CC2D9",
+});
+
+breakfastLabel=Ti.UI.createLabel({
+	color:"fff",
+	text:"Breakfast",
+});
+breakfastHeader.add(breakfastLabel);
 
 
 //table view  and table view section
 
+
+var breakfastSection=Ti.UI.createTableViewSection({headerTitle:"Breakfast"});
+//headerView:breakfastHeader;-don't do this
+	
+// 
+var lunchSection=Ti.UI.createTableViewSection({headerTitle:"Lunch"});
+// headerView:lunchHeader;
+// 
+
 var table=Ti.UI.createTableView({
-	style:Ti.UI.iPhone.TableViewStyle.GROUPED,
-	//data: breakfastItems, 
-	dats:[breakfastSection, lunchSection],
+	//style:Ti.UI.iPhone.TableViewStyle.GROUPED,
+	data: breakfastItems, 
+	data:[breakfastSection, lunchSection], //this let's you know how many sections you will have.
 	backgroundColor:"#47C2AF",
-	headerTitle:"Gorceries",
+	headerTitle:"Groceries",
 	separatorColor: "#5639AC",
 
 });
-var breakfastSection=Ti.UI.createTableViewSection();
-headerTitle:"Breakfast";
-var lunchSection=Ti.UI.createTableViewSection();
-headerTitle: "Lunch";
-
 
 //TODO: add table view section to table
 //TODO: change color of rows.
 
 
-var breakfastHeader=Ti.UI.createView({
-	backgroundColor:"",
+for(i=0;i<breakfastItems.length;i++){
+	var bRow=Ti.UI.createTableViewRow({
+	
+	title:breakfastItems[i].title,
 });
+breakfastSection.add(bRow);
+}													//these are the for loops that will run my arrays
 
-breakfastLabel-Ti.UI.createLabel({
-	color:"fff",
-	text:"Breakfast"
+for(i=0;i<lunchItems.length;i++){
+var lRow=Ti.UI.createTableViewRow({
+	title:lunchItems[i].title,
 });
-breakfastHeader.add(breakfastHeader);
+lunchSection.add(lRow);
+}
 
 
 //device detection
@@ -56,10 +82,10 @@ console.log(osName);
 
 if(osName==="iPhone OS"){
 	table.style=Ti.UI.iPhone.TableViewStyle.GROUPED;  //make sure to add semicolon, since it's not a property
-}
-
-
+} 
 
 //open
+win.add(breakfastLabel);
 win.add(table);
+image.open();
 win.open();
