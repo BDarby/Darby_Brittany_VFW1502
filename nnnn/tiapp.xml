@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.bdarby</id>
-    <name>3.2 exports</name>
+    <id>com.nnn</id>
+    <name>nnnn</name>
     <version>1.0</version>
     <publisher>b_nicole</publisher>
     <url>http://</url>
@@ -11,7 +11,7 @@
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>be469d9a-9a79-45de-aaf2-cf9bda1252b4</guid>
+    <guid>8bd63aa6-bb44-4510-bde7-80df967ac7bd</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
         <plist>

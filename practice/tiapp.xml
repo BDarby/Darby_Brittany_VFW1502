@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>com.bdarby</id>
-    <name>3.2 exports</name>
+    <name>practice</name>
     <version>1.0</version>
     <publisher>b_nicole</publisher>
     <url>http://</url>
@@ -11,7 +11,7 @@
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>be469d9a-9a79-45de-aaf2-cf9bda1252b4</guid>
+    <guid>30ecf2d7-ce73-4c90-8f2a-b33232b663cf</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
         <plist>
@@ -53,7 +53,7 @@
         <target device="blackberry">false</target>
         <target device="ipad">true</target>
         <target device="iphone">true</target>
-        <target device="mobileweb">true</target>
+        <target device="mobileweb">false</target>
     </deployment-targets>
     <sdk-version>3.5.0.GA</sdk-version>
 </ti:app>
