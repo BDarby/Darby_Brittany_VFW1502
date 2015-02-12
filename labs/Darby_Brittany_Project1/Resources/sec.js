@@ -22,7 +22,7 @@ var nextButton = Ti.UI.createLabel({
 	right: 10,
 
  });
- nextButton.addEventListener("click", function(){
+ nextButton.addEventListener("click", function(){  // this is how the button works
 	 if (count==4){
 		 count=0;
 	 }else{
@@ -53,10 +53,7 @@ Steelers.text=Steelers1[count];
 });
 
 
-var backLabel=Ti.UI.createLabel({
-	text:"Back",
-});
- backButton.add("backLabel");
+
 win.add(nextButton,backButton);
 win.add(Steelers1);
 win.add(Steelers);

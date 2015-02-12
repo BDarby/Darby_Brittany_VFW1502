@@ -42,14 +42,14 @@ var leftButton=Ti.UI.createLabel({ 				//this is the left button
 
 
 
-left.addEventListner("dblclick",function(){  //*IMPORTANT* IS THE COUNTER TO MAKE MY BUTTONS WORK
-	if(count==4){
-		count=0;
-	}else{
-		count--;
-	}
-	word.text=message[count];  //have to ask question on what this means
-});
+ // leftButton.addEventListner("dblclick",function(){  //*IMPORTANT* IS THE COUNTER TO MAKE MY BUTTONS WORK
+	// if(count==4){
+		// count=0;
+	// }else{
+		// count--;
+	// }
+	// word.text=message[count];  //have to ask question on what this means
+// });
 
 
 var rightButton=Ti.UI.createLabel({ 				//this is the right button
@@ -63,22 +63,33 @@ var rightButton=Ti.UI.createLabel({ 				//this is the right button
 
 
 
-right.addEventListner("dblclick",function(){  //*IMPORTANT* IS THE COUNTER TO MAKE MY BUTTONS WORK
-	if(count==4){
-		count=0;
-	}else{
-		count++;
-	}
-	word.text=message[count];
-});
+// rightButton.addEventListner("dblclick",function(){  //*IMPORTANT* IS THE COUNTER TO MAKE MY BUTTONS WORK
+	// if(count==4){
+		// count=0;
+	// }else{
+		// count++;
+	// }
+	// word.text=message[count];
+// });
 
 
-
+// nextButton.addEventListener("click", function(){  // this is how the button works
+	 // if (count==4){
+		 // count=0;
+	 // }else{
+		 // count++;
+	 // }
+	 // Steelers.text=Steelers1[count];
+ // });
  
- rightButton.add(rightButton);
- rightButton.open();
- leftButton.add(leftButton);
- leftButton.open();
+ var slider=Ti.UI.createSlider({
+ 	height:150,
+ 	width:300,
+ 	bottom:50,
+ });
+ 
+ 
+ create.add(slider);
  create.add(rightButton,leftButton);
  create.open();
  shark.open();
