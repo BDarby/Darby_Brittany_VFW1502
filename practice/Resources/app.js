@@ -42,14 +42,14 @@ var leftButton=Ti.UI.createLabel({ 				//this is the left button
 
 
 
- // leftButton.addEventListner("dblclick",function(){  //*IMPORTANT* IS THE COUNTER TO MAKE MY BUTTONS WORK
-	// if(count==4){
-		// count=0;
-	// }else{
-		// count--;
-	// }
-	// word.text=message[count];  //have to ask question on what this means
-// });
+ leftButton.addEventListener("dblclick",function(){  //*IMPORTANT* IS THE COUNTER TO MAKE MY BUTTONS WORK
+	if(count==4){
+		count=0;
+	}else{
+		count--;
+	}
+	word.text=message[count];  //have to ask question on what this means
+});
 
 
 var rightButton=Ti.UI.createLabel({ 				//this is the right button
@@ -63,14 +63,14 @@ var rightButton=Ti.UI.createLabel({ 				//this is the right button
 
 
 
-// rightButton.addEventListner("dblclick",function(){  //*IMPORTANT* IS THE COUNTER TO MAKE MY BUTTONS WORK
-	// if(count==4){
-		// count=0;
-	// }else{
-		// count++;
-	// }
-	// word.text=message[count];
-// });
+rightButton.addEventListener("dblclick",function(){  //*IMPORTANT* IS THE COUNTER TO MAKE MY BUTTONS WORK
+	if(count==4){
+		count=0;
+	}else{
+		count++;
+	}
+	word.text=message[count];
+});
 
 
 // nextButton.addEventListener("click", function(){  // this is how the button works

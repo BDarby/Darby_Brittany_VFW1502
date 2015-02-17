@@ -1,95 +1,145 @@
-require(Darby_Brittany_Project2.2);
-Darby_Brittany_Project2.add("Darby_Brittany_Project2.2");
-
-
-var team=Ti.UI.createWindow({
-	backgroundColor:"green",
-	title:"AFC teams",
-});
-
-var winT=Ti.UI.iOS.createNavigationWindow({
-	window:team,
-	
-});
-var winN=Ti.UI.createWindow({
-	backgroundColor:"Yellow",
-	title:"AFC North",
-});
-
-
-var winE=Ti.UI.createWindow({
-	window:"AFC East",
-});
-
-var winS=Ti.UI.createWindow({
-	window:"AFC South",
-});
-
-var winW=Ti.UI.createWindow({
-	window:"AFC West",
-});
- 
- 
- //buttons
- 
- 
- var buttonN = Titanium.UI.createButton({
-    title: 'AFC Lineup',
-    top:300,
-});
- 
- var buttonE = Titanium.UI.createButton({
-    title: 'AFC Lineup',
-    top:400,
-});
- 
-buttonNo=addEventListener("click", function(){
-	winN..closeWindow
-
-
-
-
-var win2 = Titanium.UI.createWindow({
-    backgroundColor: '#6ACDA7',
-    title: 'sea glass window'
-});
-
-var win1 = Titanium.UI.iOS.createNavigationWindow({
-   window: win2
-});
-
-var win4= Ti.UI.createWindow({
-	backbroundColor:"#B43C66",
-	title:"Purple window",
-});
-
-var win3 = Titanium.UI.createWindow({
-    backgroundColor: '#B3E5E6',
-    title: 'Blue Window'
-});
-
-var button2=Ti.UI.createButton({
-	title:"Open the purple window"
-});
-button2.addEventListener('click', function(){
-    win1.openWindow(win4, {animated:true});
-});
-
-
-var button = Titanium.UI.createButton({
-    title: 'Open Blue Window'
-});
-button.addEventListener('click', function(){
-    win1.openWindow(win3, {animated:true});
-});
-
-win2.add(button);
-var button2 = Titanium.UI.createButton({
-    title: 'Close Blue Window'
-});
-button2.addEventListener('click', function(){
-    win1.closeWindow(win3, {animated:false}); //win3.close() will also work!!
-});
-win4.add(button2);
-win3.add(button);
-win1.open();
+// // require(Darby_Brittany_Project2.2);
+// // Darby_Brittany_Project2.add("Darby_Brittany_Project2");
+// 
+// 
+// //windows
+// 
+// var team=Ti.UI.createWindow({
+	// backgroundColor:"green",
+	// title:"AFC teams",
+// });
+// 
+// var winT=Ti.UI.iOS.createNavigationWindow({
+	// window:team,
+// 	
+// });
+// var winN=Ti.UI.createWindow({  //window North
+	// backgroundColor:"Yellow",
+	// title:"AFC North",
+// });
+// 
+// 
+// var winE=Ti.UI.createWindow({ //window east
+	// window:"AFC East",
+// });
+// 
+// var winS=Ti.UI.createWindow({ // window South
+	// window:"AFC South",
+// });
+// 
+// var winW=Ti.UI.createWindow({ //window west
+	// window:"AFC West",
+// });
+//  
+//  
+ // //buttons
+//  
+//  
+ // var buttonN = Titanium.UI.createButton({  //creates button for North
+    // title: 'AFC Lineup',
+    // top:300,
+// });
+//  
+ // var buttonE = Titanium.UI.createButton({ //creates button for East
+    // title: 'AFC Lineup',
+    // top:400,
+// });
+// 
+// var buttonS=Titanium.UI.createButton({//creates button for South
+    // title: 'AFC Lineup',
+    // top:500,
+// });
+//     
+// var buttonW=Titanium.UI.createButton({  //creates button for West
+    // title: 'AFC Lineup',
+    // top:600,
+// });
+//  
+// 
+// 
+// 
+// //Event listeners
+// 
+// buttonN.addEventListener("click", function(){   //this close The north window
+	// winN.open(winE);
+// });
+// 
+// buttonE.addEventListener("click",function(){  //this closes the east window
+	// winE.closeWindow();
+// });
+// 
+// buttonS.addEventListener("click",function(){  //this close the south window
+	// winS.closeWindow;	
+// });
+// 
+// buttonW.addEventListener("click",function(){  //this closes the west window
+	// winW.closeWindow;
+// });
+// 
+// 
+// //this is the for loop
+// 
+// //.........i got nothing
+// 
+// 
+// 
+// //I think this is the code refractoring part
+// 
+// 
+// var data=[
+// 
+// {afcNorth:[
+// {title:"Ravens":"ravens"},
+// {title:"Steelers":"pittsburgh"},
+// {title:"Bengals":"cincinatti"},
+// {title:"Browns":"cleveland"},
+// ]
+// 	
+	// {afcEast:[
+// {title:"Bills":"buffalo"},
+// {title:"Dolphins":"Miami"},
+// {title:"Patriots":"new england"},
+// {title:"Jets":"new york"},
+// ]
+// 		
+	// {afcSouth:[
+// {title:"Texans":"Huston"},
+// {title:"Colts":"Indianapolis"},
+// {title:"Jaguars":"Jacksonville"},
+// {title:"Titans":"Tennessee"},
+// ]
+// 
+// 
+	// {afcWest:[
+// {title:"Broncos":"Denver"},
+// {title:"Cheifs":"kansas City"},
+// {title:"Raiders":"Oakland"}, 
+// {title:"Chargers":"San Diego"},
+// 		
+// ]};
+// 
+// 
+// ];
+// 
+// 
+// 
+// //detail function...not sure how this works though
+// 
+// // var getDetail=function(){
+	// // var winDetail=Ti.UI.createWindow({
+		// // backgroundColor:"#3BB050",
+	// // });
+	// // var labelTitle=Ti.UI.createLabel({
+		// // text:event.source.title,
+	// // });
+// 
+// 
+// 
+// 
+// data.view();
+// winN.open(buttonN);
+// winE.open(buttonE);
+// winS.open(buttonS);
+// winW.open(buttonW);
+// winT.open();
+// team.open();

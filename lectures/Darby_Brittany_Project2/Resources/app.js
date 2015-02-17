@@ -93,27 +93,40 @@ var afcESection=Ti.UI.createTableViewSection({headerTitle:"AFC East"});
 var afcSSection=Ti.UI.createTableViewSection({headerTitle:"AFC South"});
 var afcWSection=Ti.UI.createTableViewSection({headerTitle:"AFC West"});
 
+// 
+// footballTable=Ti.UI.createTableView({
+	// data:[afcNSection,afcESection,afcSSection,afcWSection], //this let's you know how many sections you will have.
+	// backgroundImage:"nfl.jpeg",
+	// backgroundColor:"transparent",
+	// headerTitle:"NFL AFC Teams",
+	// separatorColor:"#47C2AF",
+// });
 
-footballTable=Ti.UI.createTableView({
-	data:[afcNSection,afcESection,afcSSection,afcWSection], //this let's you know how many sections you will have.
-	backgroundImage:"nfl.jpeg",
-	backgroundColor:"transparent",
-	headerTitle:"NFL AFC Teams",
-	separatorColor:"#47C2AF",
+
+
+var tableN=Ti.UI.createTableViewSection({
+	data:[afcNSection],
 });
+winN.add(tableN);
+
+var tableE=Ti.UI.createTableViewSection({
+	data:[afcESection],
+});
+winE.add(tableE);
+var tableS=Ti.UI.createTableViewSection({
+	data:[afcSSection],
+});
+winS.add(tableS);
+var tableW=Ti.UI.createTableViewSection({
+	data:[afcWSection],
+});
+winW.add(tableW);
+
+
 
 // var headerView=Ti.UI.createTableViewSection({headerTitle:"NFL AFC Teams"});
 // headerView.add(headerTitle);
 
-//detail function
-
-// var getDetail=function(){
-	// var winDetail=Ti.UI.createWindow({
-		// backgroundColor:"#3BB050",
-	// });
-	// var labelTitle=Ti.UI.createLabel({
-		// text:event.source.title,
-	// });
 
 
 
@@ -128,9 +141,7 @@ for (i=0;i<afcNorth.length;i++){
 afcNSection.add(northRow);
 }								
 
-// northRow.addEventListener("click,function"(){
-	// console.log("The north row was clicked"),
-// });			
+			
 
 
 for (i=0;i<afcEast.length;i++){
@@ -162,50 +173,16 @@ var osName=Ti.Platform.name;
 console.log(osName);
 
 if(osName==="iPhone OS"){
-	//footballTable.style=Ti.UI.iPhone.TableViewStyle.GROUPED; // don't use group because it does some weird shit.
+	//footballTable.style=Ti.UI.iPhone.TableViewStyle.GROUPED; // don't use group because it does something.
 } 
 
+
+require("secondary_project2");
 //footballTable.add(image);
-win.add(footballTable);
+//win.add(footballTable);
 win.open();
 
-// require("Darby_Brittany_Project2.2");
-
-//This is my attempt of doing JSON
-
-
-var data=[
-
-{afcNorth:[
-{title:"Ravens","ravens",},
-{title:"Steelers":"pittsburgh"},
-{title:"Bengals":"cincinatti"},
-{title:"Browns":"cleveland"},]},
-	
-	{afcEast:[
-{title:"Bills":"buffalo"},
-{title:"Dolphins":"Miami"},
-{title:"Patriots":"new england"},
-{title:"Jets":"new york"},
-		
-	]},
-	{afcSouth:[
-{title:"Texans":"Huston"},
-{title:"Colts":"Indianapolis"},
-{title:"Jaguars":"Jacksonville"},
-{title:"Titans":"Tennessee"},
-		
-	]};
-	{afcWest:[
-{title:"Broncos":"Denver"},
-{title:"Cheifs":"kansas City"},
-{title:"Raiders":"Oakland"}, 
-{title:"Chargers":"San Diego"},
-		
-]};
-
-
-];
+ // Darby_Brittany_Project2.add("Darby_Brittany_Project2.2");
 
 
 
@@ -217,18 +194,21 @@ var data=[
 
 
 
-var win2=Ti.UI.createWindow({
-	backgroundColor:'#B3E5E6',
-	title:"SkyBlue Window",
-});
 
-var button = Titanium.UI.createButton({
-    title: 'AFC Lineup',
-});
 
-button.addEventListener('click', function(){
-    win.openWindow(win2, {animated:true});
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

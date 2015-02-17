@@ -10,7 +10,7 @@ var win=Ti.UI.createWindow({
 
 var breakfastItems=[
 {title:"Bacon"}, 
-{title:"eggs"},
+{title:"eggs",},
 {title:"Frosted flakes"},
  {title:"Milk"},
  {title:"Oj"}]; //dictionary
@@ -87,5 +87,5 @@ if(osName==="iPhone OS"){
 //open
 win.add(breakfastLabel);
 win.add(table);
-image.open();
+//image.open();
 win.open();
