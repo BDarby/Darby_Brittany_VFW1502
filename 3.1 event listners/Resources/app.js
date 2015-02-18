@@ -18,7 +18,7 @@ var view=Titanium.UI.createView({
 //add event listner
 view.addEventListener('click', function(eventData){
 	alert("I've been clicked");
-	console.log(eventData);
+	console.log(eventData.source.title);
 });
  
 
