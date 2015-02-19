@@ -53,7 +53,7 @@ buttonN.addEventListener('click',function(){   //this opens The north window
 
 
 //these are the exports.
-var loadFile=require("thisWillWork");
+var loadFile=require("secondto2.2");
 console.log(loadFile.afcNorth);
 console.log(loadFile.afcEast);
 console.log(loadFile.afcSouth);
@@ -66,5 +66,5 @@ team.add(buttonN);
 winT.open();
 
 
-require("second to2.2");
+require("secondto2.2");
 winT.open();

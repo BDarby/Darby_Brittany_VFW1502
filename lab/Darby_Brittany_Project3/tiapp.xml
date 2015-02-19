@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.BuddyBrittany</id>
-    <name>Buddy and Brittany</name>
+    <id>com.bdarby3</id>
+    <name>Darby_Brittany_Project3</name>
     <version>1.0</version>
     <publisher>b_nicole</publisher>
     <url>http://</url>
-    <description>undefined</description>
+    <description/>
     <copyright>2015 by b_nicole</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>890b76e8-33db-4348-a06f-93b7aa52d685</guid>
+    <guid>0e122e7b-65e8-4baa-a2ff-999f492c7479</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
         <plist>

@@ -8,7 +8,7 @@ var afcNorthSection=Ti.UI.createListSection({  //need this to create the section
 	headerTitle:"Afc North",
 });
 
-
+//
 
 var afcNorth=[
 {properties:{title:"Ravens"}},
@@ -81,7 +81,7 @@ var afcNorthHeader=Ti.UI.createView({			//North
 });
 afcNorthLabel=Ti.UI.createLabel({
 	color:"#3DB870",
-	text:"AFC North"
+	text:"AFC North",
 });
 
 afcNorthHeader.add(afcNorthLabel);
@@ -93,7 +93,7 @@ var afcEastHeader=Ti.UI.createView({			//East
 });
 afcEastLabel=Ti.UI.createLabel({
 	color:"#3DB870",
-	text:"AFC East"
+	text:"AFC East",
 });
 afcEastHeader.add(afcEastLabel);
 
@@ -104,7 +104,7 @@ var afcSouthHeader=Ti.UI.createView({			//south
 });
 afcSouthLabel=Ti.UI.createLabel({
 	color:"#3DB870",
-	text:"AFC South" 
+	text:"AFC South", 
 });
 
 afcSouthHeader.add(afcSouthLabel);
@@ -116,7 +116,7 @@ var afcWestHeader=Ti.UI.createView({			//West
 });
 afcWestLabel=Ti.UI.createLabel({
 	color:"#3DB870",
-	text:"AFC West"
+	text:"AFC West",
 });
 afcWestHeader.add(afcWestLabel);
 
@@ -142,29 +142,26 @@ row.addEventListener("click", function(event){
 			
 		});
 		winT.openWindow(northWin);
-		backgroundColor:"#D2C6EC",
+		
 
+});
+}
 
-
-
-for (i=0;i<afcEast.length;i++){
+for(i=0;i<afcEast.length;i++){
 	var eastRow=Ti.UI.createTableViewRow({
 		title:afcEast[i].properties.title,
 		color:"#C2EBC5",
-	}
+	});
 afcESection.add(eastRow);
 eastRow.addEventListener("click", function(event){
 	console.log(event);
 	var eastWin=Ti.UI.createWindow({
 		backgroundColor:"#D2C6EC"
 	});
-	winT.openWindow(eastWin)
-	backgroundColor:"#D2C6EC",
+	winT.openWindow(eastWin);
+	
+});
 }
-
-
-
-
 
 for (i=0;i<afcSouth.length;i++){
 	var southRow=Ti.UI.createTableViewRow({
@@ -175,11 +172,11 @@ afcSSection.add(southRow);
 southRow.addEventListener("click",function(){
 	var southWin=Ti.UI.createWindow({
 		backgroundColor:"#1F585C",
-	})
-	winT.openWindow(southWin)
-	backgroundColor:"#1F585C",
+	});
+	winT.openWindow(southWin);
+	
+});
 }
-
 
 for (i=0;i<afcWest.length;i++){
 	var westRow=Ti.UI.createTableViewRow({
@@ -190,10 +187,10 @@ afcWSection.add(westRow);
 westRow.addEventListener("click",function(){
 	var westWin=Ti.UI.createWindow({
 		backgroundColor:"#7DD4B4",
-	})
-	winT.openWindow(winRow)
-	backgroundColor:"#7DD4B4",
-}
+	});
+	winT.openWindow(westWin);
+	
+});
 }
 
 var section=[];//I am going to push my sections into this array.
