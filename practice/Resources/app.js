@@ -5,7 +5,12 @@ var create=Ti.UI.createWindow({
 	height: Ti.UI.FILL,  //this means to fill up the whole page.
 });
 
-var  shark=Ti.UI.createWindow({
+var create2=Ti.UI.createWindow({
+	backgroundColor:"blue",
+});
+
+
+var  shark=Ti.UI.createView({
 	backgroundImage:"sharks.jpeg", //this is the image i use.
 	width:350,
 	height:500,
@@ -19,12 +24,23 @@ var word=Ti.UI.createLabel({
 });
 
 
+nav=Ti.UI.iOS.createNavigationWindow({
+	window:create,
+});
+
+var button=Ti.UI.createButton({
+	title:"Next Page",
+	bottom:15,
+});
 
 
+button.addEventListener("click", function(){
+	create.openWindow(create2,{animated:true});
+});
 
-
-
-
+// buttonN.addEventListener('click',function(){   //this opens The north window
+	// winT.openWindow(winN,{animated:true});
+// });
 
 
 
@@ -73,14 +89,6 @@ rightButton.addEventListener("dblclick",function(){  //*IMPORTANT* IS THE COUNTE
 });
 
 
-// nextButton.addEventListener("click", function(){  // this is how the button works
-	 // if (count==4){
-		 // count=0;
-	 // }else{
-		 // count++;
-	 // }
-	 // Steelers.text=Steelers1[count];
- // });
  
  var slider=Ti.UI.createSlider({
  	height:150,
@@ -89,10 +97,11 @@ rightButton.addEventListener("dblclick",function(){  //*IMPORTANT* IS THE COUNTE
  });
  
  
- create.add(slider);
+ create.add(slider, button);
  create.add(rightButton,leftButton);
  create.open();
- shark.open();
+ //shark.open();
+ create.add(shark);
  create.add(word);   // you call it the window you create.
 
  

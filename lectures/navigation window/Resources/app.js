@@ -28,7 +28,7 @@ var button=Ti.UI.createButton({
 
 button.addEventListener("Click,function")(event){
 	navigationGroup.openWindow(),
-});
+};
 
 
 
