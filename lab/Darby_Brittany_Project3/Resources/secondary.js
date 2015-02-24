@@ -11,95 +11,114 @@ var math=pWidth/4;
 var viewContainer =Ti.UI.createScrollView({
 	layout:"horizontal",
 	contentWidth: pWidth,
+		// console.log(eventData);
+// });
 	top: 20,
 });
 
+var players2=Ti.UI.createWindow({  					//this is the other window
+ 	backgroundColor:"White",
+ 	layout:"horizontal",
+ 	
+ });
+	
 
-var gallery= Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory,"players");
+
+
+var gallery= Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory,"players"); //this is how you get stuff out of the file.
 console.log(gallery);
 var galleryList = gallery.getDirectoryListing();
 console.log(galleryList);
 
 
+
+var playerCollection=[];
+//this is the for that make my images appear
 for(i=0;i < galleryList.length;i++){
 	
-var theImage=Ti.UI.createImageView({
+var theImage=Ti.UI.createImageView({   //image view 1
 		image:"players/"+galleryList[i],
-		width:math,
-		height:math,
-		//left: itemSize,
-		//right: itemSize,
+		width:itemSize,
+		height:itemSize,
+		left: space,
+		right: space,
 		bottom: space,
 		borderColor:"black",
+		id:i,
 	});
-	
-	viewContainer.add(theImage);
-	
-};
-
-
-
-
 
 	
-var playerCollection=[];
-
-for(i=0; i<galleryList.length; i++){
-	var view=Ti.UI.createImageView({
-		image:galleryList.image,
 	
-	});
-	var scrollView=Ti.UI.createScrollView();
-	scrollView.add(view);
-	// var label=Ti.UI.createLabel({
-		// text:galleryList[i].name,
-	//});
-	//view.add(label);
-	playerCollection.push(scrollView);
-};
-
-var scrollableView=Ti.UI.createScrollableView({
-	views:playerCollection,
+var view=Ti.UI.createImageView({   //image view 2
+		image:"players/"+galleryList[i],
+		width:pWidth,
 });
- 
+ var zoom=Ti.UI.createScrollView({
+	 maxZoomScale:2.0,
+ });
+
+zoom.add(view);
+playerCollection.push(zoom);
+
+viewContainer.add(theImage);
 
 
-// var view1 = Ti.UI.createView({ backgroundColor:'#123', name:"View Red"});
-// var view2 = Ti.UI.createView({ backgroundColor:'#246', name:"View Green" });
-// var view3 = Ti.UI.createView({ backgroundColor:'#48b', name :"View Blue" });
-// var scrollWin=Ti.UI.createScrollView({
-		// //set layout
-		// layout:"horizontal",
-		// //set content
-		// contentWidth:deviceWidth,
-		// top:20,
-// 		
-	// });
+	theImage.addEventListener("click", function(event){ 			//this is the event listener
+		var scrollableView=Ti.UI.createScrollableView({
+	    views: playerCollection,
+
+	
+	    
+});
+	    nav.openWindow(players2);
+
+		scrollableView.currentPage=event.source.id;
+	//scrollableView.setCurrentPage(0);
+	    showPagingControl:true,
+		
+		
+		
+		// scrollableView.currentPage=0;
+		// scrollableView.setCurrentPage(0);
+		players2.add(scrollableView);
+		players2.open();
+		
+
+});
+
+}
+		
+		                        
+// swipe.currentPage=1;
+// swipe.setCurrentPage(1);
+
+// 
+	// var scrollableView=Ti.UI.createScrollableView({
+	// views: players2,
+	// scrollableViewcurrentPage=0;
+	// scrollableView.setCurrentPage(0);
+	// showPagingControl:true,
+// });
+// 	
+
+
+
+		
+		
 	
 	
-	// var deviceWidth=Ti.Platform.displayCaps.platformWidth;
-	// var numOfItems=25;
-	// var itemInRow=4;
-	// var space=5;
-	// var spaceUsed=4*2*5; //4 is the number of rows, 5 is the number of spaces we have
-	// var itemSize=(deviceWidth-spaceUsed*4)/4;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-//open window
+
+
+
 win.add(viewContainer);
 
+
+var nav=Ti.UI.iOS.createNavigationWindow({
+	window: win
+});
+
+
+	
+//win.add(zoom);
+nav.open();
+//win.add(view);

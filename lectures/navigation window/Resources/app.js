@@ -1,11 +1,11 @@
-var win1=Ti.UI.createWindow({
+var win1=Ti.UI.createWindow({// this is a window
 	backgroundColor:"green",
 	title:"Color,"
 });
 
 
 
-var winDetail=Ti.UI.createWindow({
+var winDetail=Ti.UI.createWindow({ //this is a window
 	backgroundColor:"Yellow",
 	title:"color 2",
 });
@@ -26,9 +26,9 @@ var button=Ti.UI.createButton({
 	title:"Look at color 2",
 });
 
-button.addEventListener("Click,function")(event){
+button.addEventListener("Click",function(event){
 	navigationGroup.openWindow(),
-};
+});
 
 
 
