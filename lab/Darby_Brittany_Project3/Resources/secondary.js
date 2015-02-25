@@ -90,4 +90,3 @@ button.addEventListener('click', function(){
 win.add(viewContainer);
 players2.add(button);
 nav.open();
-
