@@ -39,86 +39,66 @@ win1.open();
 
 
 
+for (var i = 0; i < itemCount; i++) {
 
-// //detail function
-// 
-// var getDetail=function(){
-	// var winDetail=Ti.UI.createWindow({
-		// backgroundColor:"#3BB050",
-	// });
-	// var labelTitle=Ti.UI.createLabel({
-		// text:event.source.title,
-	// });
-// });
-// 
-// 
-// 
-// //this is the array
-// 
-// var afcNorth=[
-// {title:"Ravens"},
-// {title:"Steelers"},
-// {title:"Bengals"},
-// {title:"Browns"},
-// ];
-// 
-// var afcEast=[
-// {title:"Bills"},
-// {title:"Dolphins"},
-// {title:"Patriots"},
-// {title:"Jets"},
-// ]; 
-// 
-// var afcSouth=[
-// {title:"Texans"},
-// {title:"Colts"},
-// {title:"Jaguars"},
-// {title:"Titans"},
-// ];
-// 
-// var afcWest=[
-// {title:"Broncos"},
-// {title:"Cheifs"},
-// {title:"Raiders"}, 
-// {title:"Chargers"},
-// ];
-// 
-// 
-// // JSON, XML, SQL
-// 
-// //this is JSON
-// //make sure your JSON project is a data, array, properties, or objects.
-// var  data={
-	// property:value,
-	// property:{
-		// property:value,
-		// propert:{},
-	// }
-// };
-// 
-// var data2=[
-	// {afcNorth: [
-// 		
-	// ]},
-// 	
-// 	
-	// {afcEast:[
-// {title:"Ravens"},
-// {title:"Steelers"},
-// {title:"Bengals"},
-// {title:"Browns"},]},
-	// {afcSouth:[]},
-	// {afcWest:[]};
-// ];
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
+var view = Ti.UI.createImageView({
+image : "Movies/" + galleryList[i],
+backgroundColor : "transparent",
+top : margin,
+left : margin,
+width : size,
+height : size,
+index : i,
+borderRadius : 10,
+name: i
+});
+
+viewContainer.add(view);
+
+view.addEventListener("click", function() {
+
+var newWindow = Ti.UI.createWindow({
+
+backgroundColor : "white",
+title : "Movies On Demand",
+layout : "horizontal"
+
+});
+
+navGroupWin.openWindow(newWindow, {
+animated : true
+});
+
+
+
+for (var i = 0; i < galleryList.length; i++) {
+
+
+var renters = Ti.UI.createImageView({
+image : "Movies/" + galleryList[i],
+backgroundColor : "transparent",
+index : i,
+width : pWidth,
+//borderRadius : 10,
+name: i
+
+});
+
+myArray.push(renters);
+
+};
+
+var scrollableView = Ti.UI.createScrollableView({
+views : myArray,
+showPagingControl : true,
+backgroundColor : "black",
+pagingControlOnTop:true,
+pagingControlColor:"transparent"
+});
+
+newWindow.add(scrollableView);
+scrollableView.currentPage = this.name;
+
+});
+
+};

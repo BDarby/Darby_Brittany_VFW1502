@@ -11,8 +11,7 @@ var math=pWidth/4;
 var viewContainer =Ti.UI.createScrollView({
 	layout:"horizontal",
 	contentWidth: pWidth,
-		// console.log(eventData);
-// });
+		
 	top: 20,
 });
 
@@ -21,9 +20,6 @@ var players2=Ti.UI.createWindow({  					//this is the other window
  	layout:"horizontal",
  	
  });
-	
-
-
 
 var gallery= Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory,"players"); //this is how you get stuff out of the file.
 console.log(gallery);
@@ -65,60 +61,33 @@ viewContainer.add(theImage);
 
 	theImage.addEventListener("click", function(event){ 			//this is the event listener
 		var scrollableView=Ti.UI.createScrollableView({
-	    views: playerCollection,
-
-	
-	    
-});
-	    nav.openWindow(players2);
-
+	    views: playerCollection,  
+});// this is the ending of the scrollable loop
 		scrollableView.currentPage=event.source.id;
-	//scrollableView.setCurrentPage(0);
 	    showPagingControl:true,
 		
-		
-		
-		// scrollableView.currentPage=0;
-		// scrollableView.setCurrentPage(0);
 		players2.add(scrollableView);
 		players2.open();
+	
 		
-
-});
+});//this is the ending of the event listener
 
 }
-		
-		                        
-// swipe.currentPage=1;
-// swipe.setCurrentPage(1);
-
-// 
-	// var scrollableView=Ti.UI.createScrollableView({
-	// views: players2,
-	// scrollableViewcurrentPage=0;
-	// scrollableView.setCurrentPage(0);
-	// showPagingControl:true,
-// });
-// 	
-
-
-
-		
-		
-	
-	
-
-
-
-win.add(viewContainer);
-
-
 var nav=Ti.UI.iOS.createNavigationWindow({
-	window: win
+	window: win,
 });
 
+var button = Titanium.UI.createButton({
+    title: 'back',
+    top:30,
+});
+button.addEventListener('click', function(){
+     win.openWindow(players2, {animated:true});
+});
+	//this the ending of the for loop.	
 
-	
-//win.add(zoom);
+              
+win.add(viewContainer);
+players2.add(button);
 nav.open();
-//win.add(view);
+
