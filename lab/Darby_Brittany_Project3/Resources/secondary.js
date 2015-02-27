@@ -15,16 +15,21 @@ var viewContainer =Ti.UI.createScrollView({
 	top: 20,
 });
 
-var players2=Ti.UI.createWindow({  					//this is the other window
- 	backgroundColor:"White",
- 	layout:"horizontal",
- 	
- });
+
 
 var gallery= Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory,"players"); //this is how you get stuff out of the file.
 console.log(gallery);
 var galleryList = gallery.getDirectoryListing();
 console.log(galleryList);
+
+
+
+var players2=Ti.UI.createWindow({  					//this is the other window
+ 	backgroundColor:"White",
+ 	layout:"horizontal",
+ 	title:"Steelers Players",
+ 	
+ });
 
 
 
@@ -73,20 +78,20 @@ viewContainer.add(theImage);
 });//this is the ending of the event listener
 
 }
-var nav=Ti.UI.iOS.createNavigationWindow({
-	window: win,
+
+var button=Ti.UI.createButton({
+	title:"back",
+	top:20,
 });
 
-var button = Titanium.UI.createButton({
-    title: 'back',
-    top:30,
+button.addEventListener("click",function(){
+	players2.close(win,{animated:true});
 });
-button.addEventListener('click', function(){
-     win.openWindow(players2, {animated:true});
-});
+
+
 	//this the ending of the for loop.	
 
-              
+players2.add(button);  
 win.add(viewContainer);
-players2.add(button);
+
 nav.open();
